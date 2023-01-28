@@ -1,0 +1,26 @@
+<h3>Stories</h3>
+<div class="row">
+    {{#each stories}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    {{{editIcon user ../user _id}}} {{!<-- the first user refers to the stories user because it is eithin the scope of this currently executing/rendering #each stories loop while the second passed prop is escaping from the loop using ../ i.e. outside of loop, into main render namespace, get me the relevant user  coming in from mongoose/mongo / note the same applies to id... by having it as _id rather than ../_id we are referring here to the stories id, not user id-->}}
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{title}}</h5>
+                    <p>{{stripTags (truncate body 150)}}</p>
+                    <br />
+                    <div class="chip">
+                        <img src={{user.image}} alt="">
+                        <a href="/stories/user/{{user.id}}">{{user.displayName}}</a>  
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+    <p>No stories found sorry.</p>
+    {{/each}}
+</div>

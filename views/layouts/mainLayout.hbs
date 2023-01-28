@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel "stylesheet" href="/css/style.css" /> <!--no need for /public since we already designated /public via the path package in conjunction with express router to establish public as our static public directory for the website-->
+    <title>StoriesFetcher</title>
+
+</head>
+<body>
+    {{> _header}}
+    {{> _add_btn}}
+    <div class="container"> 
+        {{{body}}}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.20.1/ckeditor.js" integrity="sha512-zFNDGGU5T3I464vTJn5SupfBJEoxFa7oa5BRkQjm409ORBe1U4f7cpbylDdV21yrmjmYKo3Y0sPTxR9kBgSkvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // This is the initialising function for the Materialize Sidenav bar class... we use M to not materialize (kind of like $ selector in JQuery) and then init + the vanilla JS css class query selector.
+        M.Sidenav.init(document.querySelector('.sidenav'));
+        M.FormSelect.init(document.querySelector('#status'));
+
+        CKEDITOR.replace('body', {
+            plugins:'wysiwygarea, toolbar, basicstyles, link',
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* since we are using the materialise UI  components the stylesheet here is for either generic styling or for overriding particular features of a particualar component... targetted via their name.*/
+
+/* exaampl here overring the depth of the border of the materialise container border on the login page */
+/*GENERAL STYLING -note we need !important directive to overing pre-built materialise ui component style*/
+p {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+
+}
+
+.nav{
+    background-color:beige !important;
+}
+/**/
+
+/*COMPONENTS STYLING*/
+
+.login-container{
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+
+}
+.img-small{
+    width:180px;
+}

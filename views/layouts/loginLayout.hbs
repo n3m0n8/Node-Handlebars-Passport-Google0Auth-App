@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css" /> <!--no need for /public since we already designated /public via the path package in conjunction with express router to establish public as our static public directory for the website-->
+    <title>StoriesFetcher</title>
+
+</head>
+<body>
+    <!--here we inject the subordinate views within this {{body}} Handlebars tag... i.e view injects within the main view like react component injections-->
+    <div class="container login-container" > <!--CSS container for general styling of the main frame --->
+        <div class="card"> <!--note that these classes are the prebuilt materialise UI components 
+        NOTE also that this is the login layout NOT THE VIEW so we are injecting these at two layers of depth ... i.e. the CSS styling via the materialise UI components defined ion the handlebars layouts is injected into the relevant handlebars views SO we also have to tell the express router that our handlebars views are using specific injected layouts- we do so in the express router's  render()arg2 in the index.js file-->
+        <!--THREE {} DEMARCATORS FOR INJECTION - BECAUSE EVERY FRAMEWORK HAS TO DO SOMETHING DIFFERENT FOR OUR CONFUSION-->
+            <div class="card-content">
+                {{{body}}} 
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
